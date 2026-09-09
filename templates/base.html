@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    {% include "includes/header.html" %}
+
+    {% block extra_css %}
+    {% endblock %}
+</head>
+
+<body>
+
+    <div id="overlay" class="overlay"></div>
+
+    {% include "includes/navbar.html" %}
+
+    {% include "includes/sidebar.html" %}
+
+    <main id="content" class="content py-10">
+        <div class="container-fluid">
+
+            {% block content %}
+            {% endblock %}
+
+            {% include "includes/footer.html" %}
+
+        </div>
+    </main>
+
+    <script src="{% static 'js/main.js' %}" type="module"></script>
+
+    {% block extra_js %}
+    {% endblock %}
+
+</body>
+
+</html>

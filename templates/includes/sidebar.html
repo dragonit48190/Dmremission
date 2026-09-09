@@ -1,0 +1,219 @@
+{% load static %}
+
+<!-- SIDEBAR -->
+<aside id="sidebar" class="sidebar">
+
+    <!-- Logo -->
+    <div class="logo-area">
+        <a href="{% url 'dashboard:index' %}"
+        class="d-inline-flex align-items-center text-decoration-none">
+
+            <img src="{% static 'images/hospital-logo.png' %}"
+                alt="โรงพยาบาลโพนสวรรค์"
+                width="46"
+                height="46"
+                style="object-fit: contain;">
+            <div class="logo-text ms-2 lh-sm">
+                <div class="fw-bold">
+                    DM Remission
+                </div>
+                <small class="text-secondary">
+                    Phonsawan Hospital
+                </small>
+            </div>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <ul class="nav flex-column">
+
+        <!-- MAIN -->
+        <li class="px-4 py-2">
+            <small class="nav-text">MAIN</small>
+        </li>
+
+
+        <!-- Dashboard -->
+        <li>
+
+            <a class="nav-link active"
+               href="{% url 'dashboard:index' %}">
+
+                <i class="ti ti-layout-dashboard"></i>
+
+                <span class="nav-text">
+                    Dashboard
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- DM Patients -->
+        <li>
+
+            <a class="nav-link"
+               href="#">
+
+                <i class="ti ti-users"></i>
+
+                <span class="nav-text">
+                    ผู้ป่วยเบาหวาน
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Candidate -->
+        <li>
+
+            <a class="nav-link"
+               href="#">
+
+                <i class="ti ti-user-search"></i>
+
+                <span class="nav-text">
+                    Candidate
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Potential Remission -->
+        <li>
+
+            <a class="nav-link"
+               href="#">
+
+                <i class="ti ti-heart-check"></i>
+
+                <span class="nav-text">
+                    Potential Remission
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Remission -->
+        <li>
+
+            <a class="nav-link"
+               href="#">
+
+                <i class="ti ti-rosette-discount-check"></i>
+
+                <span class="nav-text">
+                    DM Remission
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Follow Up -->
+        <li>
+
+            <a class="nav-link"
+               href="#">
+
+                <i class="ti ti-calendar-check"></i>
+
+                <span class="nav-text">
+                    ติดตามผู้ป่วย
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- REPORTS -->
+        <li class="px-4 pt-4 pb-2">
+            <small class="nav-text">REPORTS</small>
+        </li>
+
+
+        <!-- Reports -->
+        <li>
+
+            <a class="nav-link"
+               href="#">
+
+                <i class="ti ti-chart-bar"></i>
+
+                <span class="nav-text">
+                    รายงาน
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Export -->
+        <li>
+
+            <a class="nav-link"
+               href="#">
+
+                <i class="ti ti-file-spreadsheet"></i>
+
+                <span class="nav-text">
+                    Export ข้อมูล
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- SYSTEM -->
+        <li class="px-4 pt-4 pb-2">
+            <small class="nav-text">SYSTEM</small>
+        </li>
+
+
+        <!-- Settings -->
+        <li>
+
+            <a class="nav-link"
+               href="#">
+
+                <i class="ti ti-settings"></i>
+
+                <span class="nav-text">
+                    ตั้งค่าระบบ
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Logout -->
+        <li>
+
+            <a class="nav-link"
+               href="#">
+
+                <i class="ti ti-logout"></i>
+
+                <span class="nav-text">
+                    ออกจากระบบ
+                </span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
