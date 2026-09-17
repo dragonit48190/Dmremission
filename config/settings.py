@@ -162,3 +162,40 @@ AUTH_USER_MODEL = "accounts.User"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Authentication
+LOGIN_URL = "accounts:login"
+LOGIN_REDIRECT_URL = "dashboard:index"
+LOGOUT_REDIRECT_URL = "accounts:login"
+
+# =========================================================
+# ThaID / OpenID Connect
+# =========================================================
+
+THAID_CLIENT_ID = os.getenv("THAID_CLIENT_ID", "")
+THAID_CLIENT_SECRET = os.getenv("THAID_CLIENT_SECRET", "")
+
+THAID_AUTHORIZATION_URL = os.getenv(
+    "THAID_AUTHORIZATION_URL",
+    "",
+)
+
+THAID_TOKEN_URL = os.getenv(
+    "THAID_TOKEN_URL",
+    "",
+)
+
+THAID_USERINFO_URL = os.getenv(
+    "THAID_USERINFO_URL",
+    "",
+)
+
+THAID_ISSUER = os.getenv(
+    "THAID_ISSUER",
+    "",
+)
+
+THAID_REDIRECT_URI = os.getenv(
+    "THAID_REDIRECT_URI",
+    "",
+)

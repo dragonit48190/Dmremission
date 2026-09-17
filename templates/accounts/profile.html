@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+ข้อมูลผู้ใช้งาน | DM Remission
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-12">
+
+        <div class="d-flex align-items-center justify-content-between mb-4">
+
+            <div>
+                <h3 class="mb-1">
+                    ข้อมูลผู้ใช้งาน
+                </h3>
+
+                <p class="text-muted mb-0">
+                    ข้อมูลบัญชีและสิทธิ์การเข้าใช้งานระบบ
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="row">
+
+    <div class="col-12 col-lg-8">
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body p-4">
+
+                <!-- Profile Header -->
+                <div class="d-flex align-items-center gap-3 mb-4">
+
+                    <img
+                        src="{% url 'accounts:avatar' %}"
+                        alt="{{ request.user.username }}"
+                        class="avatar rounded-circle"
+                        width="72"
+                        height="72"
+                        style="object-fit: cover;"
+                    >
+
+                    <div>
+
+                        <h4 class="mb-1">
+
+                            {% if request.user.first_name or request.user.last_name %}
+                                {{ request.user.get_full_name }}
+                            {% else %}
+                                {{ request.user.username }}
+                            {% endif %}
+
+                        </h4>
+
+                        <div class="text-muted">
+
+                            {% if request.user.is_superuser %}
+
+                                ผู้ดูแลระบบ (Local)
+
+                            {% else %}
+
+                                {% with role=request.user.groups.first %}
+                                    {% if role %}
+                                        {{ role.name }}
+                                    {% else %}
+                                        ยังไม่ได้กำหนดสิทธิ์
+                                    {% endif %}
+                                {% endwith %}
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <hr>
+
+
+                <!-- User Information -->
+                <div class="row g-4 mt-1">
+
+                    <div class="col-md-6">
+
+                        <label class="text-muted small">
+                            ชื่อผู้ใช้งาน
+                        </label>
+
+                        <div class="fw-semibold mt-1">
+                            {{ request.user.username }}
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <label class="text-muted small">
+                            ชื่อ - นามสกุล
+                        </label>
+
+                        <div class="fw-semibold mt-1">
+
+                            {% if request.user.first_name or request.user.last_name %}
+                                {{ request.user.get_full_name }}
+                            {% else %}
+                                -
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <label class="text-muted small">
+                            ประเภทการเข้าสู่ระบบ
+                        </label>
+
+                        <div class="fw-semibold mt-1">
+                            {{ request.user.get_auth_provider_display }}
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <label class="text-muted small">
+                            HOSxP Login
+                        </label>
+
+                        <div class="fw-semibold mt-1">
+
+                            {% if request.user.hosxp_loginname %}
+                                {{ request.user.hosxp_loginname }}
+                            {% else %}
+                                -
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <label class="text-muted small">
+                            สิทธิ์การใช้งาน
+                        </label>
+
+                        <div class="fw-semibold mt-1">
+
+                            {% if request.user.is_superuser %}
+
+                                SYSTEM ADMIN (Local)
+
+                            {% else %}
+
+                                {% with role=request.user.groups.first %}
+                                    {% if role %}
+                                        {{ role.name }}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                {% endwith %}
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <label class="text-muted small">
+                            สถานะบัญชี
+                        </label>
+
+                        <div class="fw-semibold mt-1">
+
+                            {% if request.user.is_active %}
+                                <span class="badge bg-success">
+                                    ใช้งาน
+                                </span>
+                            {% else %}
+                                <span class="badge bg-danger">
+                                    ระงับการใช้งาน
+                                </span>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <label class="text-muted small">
+                            เข้าสู่ระบบล่าสุด
+                        </label>
+
+                        <div class="fw-semibold mt-1">
+
+                            {% if request.user.last_login %}
+                                {{ request.user.last_login|date:"d/m/Y H:i" }} น.
+                            {% else %}
+                                -
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <label class="text-muted small">
+                            ยืนยันตัวตนล่าสุด
+                        </label>
+
+                        <div class="fw-semibold mt-1">
+
+                            {% if request.user.last_identity_verified_at %}
+                                {{ request.user.last_identity_verified_at|date:"d/m/Y H:i" }} น.
+                            {% else %}
+                                -
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
