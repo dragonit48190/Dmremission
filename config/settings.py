@@ -199,3 +199,13 @@ THAID_REDIRECT_URI = os.getenv(
     "THAID_REDIRECT_URI",
     "",
 )
+
+THAID_SERVER_METADATA_URL = os.getenv(
+    "THAID_SERVER_METADATA_URL",
+    "",
+)
+
+THAID_CID_CLAIM = os.getenv(
+    "THAID_CID_CLAIM",
+    "",
+)
