@@ -242,7 +242,7 @@ Development / Prototype
 
 ## Repository
 
-Private GitHub Repository:
+Public GitHub Repository:
 
 ```text
 https://github.com/dragonit48190/Dmremission
@@ -252,3 +252,20 @@ https://github.com/dragonit48190/Dmremission
 
 โรงพยาบาลโพนสวรรค์  
 จังหวัดนครพนม
+
+## License and Attribution
+
+โปรเจกต์นี้เผยแพร่ภายใต้ MIT License
+
+ส่วนของ Frontend UI มีพื้นฐานจาก InApp Dashboard Template  
+Copyright (c) 2025 Codescandy  
+เผยแพร่ภายใต้ MIT License
+
+โปรดดูรายละเอียดเพิ่มเติมในไฟล์:
+
+```text
+LICENSE
+```
+
+ผู้สนใจสามารถนำโปรเจกต์ไปศึกษา ใช้งาน แก้ไข Fork และพัฒนาต่อยอดได้  
+ภายใต้เงื่อนไขของ MIT License
