@@ -274,3 +274,50 @@ LICENSE
 
 ผู้สนใจสามารถนำโปรเจกต์ไปศึกษา ใช้งาน แก้ไข Fork และพัฒนาต่อยอดได้  
 ภายใต้เงื่อนไขของ MIT License
+
+
+## First Login / Create Local Administrator
+
+หลังจาก Clone Repository, ตั้งค่า `.env` และรัน Migration แล้ว  
+ผู้พัฒนาจะยังไม่มีบัญชี Local สำหรับเข้าสู่ระบบ
+
+ให้สร้างบัญชีผู้ดูแลระบบของตัวเองด้วย:
+
+```powershell
+python manage.py createsuperuser
+```
+
+Django จะถามข้อมูล เช่น:
+
+```text
+Username:
+Email address:
+Password:
+Password (again):
+```
+
+ตัวอย่าง:
+
+```text
+Username: developer
+Email address: developer@example.com
+```
+
+จากนั้นรันระบบ:
+
+```powershell
+python manage.py runserver
+```
+
+เปิด:
+
+```text
+http://127.0.0.1:8000/accounts/login/
+```
+
+แล้วเข้าสู่ระบบด้วย Username และ Password ที่สร้างไว้
+
+> บัญชี Local ของแต่ละ Environment จะถูกเก็บอยู่ในฐานข้อมูลของ Environment นั้นเอง  
+> บัญชีผู้ใช้งานจากเครื่องของผู้พัฒนาคนหนึ่งจะไม่ถูกแชร์ผ่าน Git Repository
+
+สำหรับ Production ควรสร้างบัญชีผู้ดูแลระบบตามนโยบายของหน่วยงาน และไม่ควรใช้บัญชี Development ร่วมกันหลายคน
