@@ -1,4 +1,9 @@
 # DM Remission Dashboard
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-5.2-092E20?logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Project Status](https://img.shields.io/badge/status-development-orange)](#development-status)
+[![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen)](CONTRIBUTING.md)
 
 ระบบ Dashboard สำหรับติดตามข้อมูล DM Remission  
 โรงพยาบาลโพนสวรรค์
@@ -19,7 +24,7 @@
 
 - Dashboard สำหรับ DM Remission
 - Authentication แบบ Local
-- รองรับการยืนยันตัวตนด้วย ThaID
+- เตรียมรองรับการยืนยันตัวตนด้วย ThaID / OpenID Connect
 - ตรวจสอบบุคลากรจาก HOSxP
 - Role / Permission
 - Profile และ Avatar จาก HOSxP
