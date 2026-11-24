@@ -172,36 +172,28 @@ LOGOUT_REDIRECT_URL = "accounts:login"
 # ThaID / OpenID Connect
 # =========================================================
 
-THAID_CLIENT_ID = os.getenv("THAID_CLIENT_ID", "")
-THAID_CLIENT_SECRET = os.getenv("THAID_CLIENT_SECRET", "")
-
-THAID_AUTHORIZATION_URL = os.getenv(
-    "THAID_AUTHORIZATION_URL",
+THAID_CLIENT_ID = os.getenv(
+    "THAID_CLIENT_ID",
     "",
 )
 
-THAID_TOKEN_URL = os.getenv(
-    "THAID_TOKEN_URL",
+THAID_CLIENT_SECRET = os.getenv(
+    "THAID_CLIENT_SECRET",
     "",
 )
 
-THAID_USERINFO_URL = os.getenv(
-    "THAID_USERINFO_URL",
-    "",
-)
-
-THAID_ISSUER = os.getenv(
-    "THAID_ISSUER",
-    "",
-)
-
-THAID_REDIRECT_URI = os.getenv(
-    "THAID_REDIRECT_URI",
+THAID_API_KEY = os.getenv(
+    "THAID_API_KEY",
     "",
 )
 
 THAID_SERVER_METADATA_URL = os.getenv(
     "THAID_SERVER_METADATA_URL",
+    "",
+)
+
+THAID_REDIRECT_URI = os.getenv(
+    "THAID_REDIRECT_URI",
     "",
 )
 
